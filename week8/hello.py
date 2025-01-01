@@ -15,4 +15,5 @@ def hello() -> str:
     response = requests.get('https://ipinfo.io/json')
     data = response.json()
     city, region, country = data['city'], data['region'], data['country']
-    return f"Hello from {city}, {region}, {country}!!"
+    org, timezone = data['org'], data['timezone']
+    return f"Hello from {city}, {region}, {country}!! ({org}) ({timezone})"
